@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<meta name="description" content="A basic template for a Chrome Extension using Twitter Bootstrap 3">
+		<meta name="author" content="Elliot Hesp">
+		
+		<title>Pi-Hole Extension</title>
+		
+		<!-- Cascading Style Sheets -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/custom.css" rel="stylesheet" media="screen">
+	    <style type="text/css">
+	    	body {
+	        	min-width: 300px;
+	            min-height: 500px;
+	            /* overflow: hidden; */
+	         }
+	    </style>		
+	</head>
+	
+	<body>
+	
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="popup.html">Pi-Hole</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Add</a></li>
+					<li class=""><a href="whitelist.html">WhiteList</a></li>
+					<li class=""><a href="blacklist.html">BlackList</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-header">Settings</li>
+							<li><a href="settings.html">Extension Settings</a></li>
+							<li><a href="#">Your Pi-Hole Admin</a></li>
+							<li><a href="about.html">About this Extension...</a></li>
+							<li class="dropdown-header">Other Links</li>
+							<li><a href="#">Pi-Hole Website</a></li>
+							<li><a href="#">Pi-Hole Help</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12" style="height:50px;"></div>
+			</row>
+			<div class="row">
+				<div class="col-10 col-offset-1">
+					<div class="panel panel-success">
+						<div class="panel-heading">Add List Entries</div>
+						<div class="panel-body">
+
+							<form action="#" method="POST">
+							  <input id="piholeurl" name="piholeurl" type="hidden" value="">
+	                		  <input id="piholekey" name="piholekey" type="hidden" value="">
+							  <fieldset class="form-group">
+							    <label for="list">Add to List:</label>
+							    <select class="form-control" name="list" id="list">
+							    	<option value="wut" selected>WAT List</option>
+							    	<option value="white">White List</option>
+							    	<option value="black">Black List</option>
+							    </select>
+							  </fieldset>							
+							  <fieldset class="form-group">
+							    <label for="domain">Domain:</label>
+							    <input type="text" class="form-control domain" id="domain" name="domain" placeholder="Example input">
+							  </fieldset>
+			                	<fieldset class="form-group">								        		
+			                		<button type="submit" name="submitbutton" id="submitbutton" class="btn btn-danger pull-right">
+			                			Add Entry
+			                		</button>
+		                		</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- Scripts -->
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/popup.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<title>Pi-Hole Extension</title>
+		
+
+		
+		<!-- Cascading Style Sheets -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/custom.css" rel="stylesheet" media="screen">
+	    <style type="text/css">
+	    	body {
+	        	min-width: 300px;
+	            min-height: 500px;
+	            /* overflow: hidden; */
+	         }
+	    </style>		
+	</head>
+	
+	<body>
+	
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="popup.html">Pi-Hole</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class=""><a href="popup.html">Add</a></li>
+					<li class="active"><a href="whitelist.html">WhiteList</a></li>
+					<li class=""><a href="blacklist.html">BlackList</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-header">Settings</li>
+							<li><a href="settings.html">Extension Settings</a></li>
+							<li><a href="#">Your Pi-Hole Admin</a></li>
+							<li><a href="#">About this Extension...</a></li>
+							<li class="dropdown-header">Other Links</li>
+							<li><a href="#">Pi-Hole Website</a></li>
+							<li><a href="#">Pi-Hole Help</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-12" style="height:50px;"></div>
+			</div>
+			<div class="row">
+				<div class="col-10 col-offset-1">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<button name="getwhitelist" id="getwhitelist" class="btn btn-default btn-xs pull-right">
+								<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+								Refresh Whitelist
+							</button>
+							Whitelist Entries
+						</div>
+						<div class="panel-body">
+			              	<form action="#" method="POST">
+			              		<input id="piholeurl" name="piholeurl" type="hidden" value="">
+			                	<input id="piholekey" name="piholekey" type="hidden" value="">
+			                	<fieldset id="domain-list-group" class="form-group">
+			                        <label for="whitedomainlist"><strong>Remove Whitelist Entry:</strong></label>
+			                        <select id="whitedomainlist" class="form-control" name="whitedomainlist" disabled></select>
+			                        <errors will go here>
+			                	</fieldset>
+			                	<fieldset class="form-group">								        		
+			                		<button type="submit" class="btn btn-danger pull-right">Remove Entry <span class="fa fa-arrow-right"></span></button>
+		                		</fieldset>
+		        			</form>
+		        		</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+		<!-- Scripts -->
+		<script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/whitelist.js"></script>
+</html>
