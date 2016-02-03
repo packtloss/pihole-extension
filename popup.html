@@ -4,9 +4,9 @@
 	    <meta charset="utf-8">
 		<meta name="description" content="A basic template for a Chrome Extension using Twitter Bootstrap 3">
 		<meta name="author" content="Elliot Hesp">
-		
+
 		<title>Pi-Hole Extension</title>
-		
+
 		<!-- Cascading Style Sheets -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/custom.css" rel="stylesheet" media="screen">
@@ -16,11 +16,11 @@
 	            min-height: 500px;
 	            /* overflow: hidden; */
 	         }
-	    </style>		
+	    </style>
 	</head>
-	
+
 	<body>
-	
+
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="popup.html">Pi-Hole</a>
@@ -35,17 +35,17 @@
 						<ul class="dropdown-menu">
 							<li class="dropdown-header">Settings</li>
 							<li><a href="settings.html">Extension Settings</a></li>
-							<li><a href="#">Your Pi-Hole Admin</a></li>
-							<li><a href="about.html">About this Extension...</a></li>
+							<li><a id="pihole_local_admin_href" href="#" target="_blank" >Your Pi-Hole Admin</a></li>
+							<li><a href="#">About this Extension...</a></li>
 							<li class="dropdown-header">Other Links</li>
-							<li><a href="#">Pi-Hole Website</a></li>
-							<li><a href="#">Pi-Hole Help</a></li>
+							<li><a href="https://pi-hole.net/">Pi-Hole Website</a></li>
+							<li><a href="https://pi-hole.net/help">Pi-Hole Help</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col-12" style="height:50px;"></div>
@@ -58,7 +58,8 @@
 
 							<form action="#" method="POST">
 							  <input id="piholeurl" name="piholeurl" type="hidden" value="">
-	                		  <input id="piholekey" name="piholekey" type="hidden" value="">
+	              <input id="piholekey" name="piholekey" type="hidden" value="">
+	              <input id="pihole_local_admin" name="pihole_local_admin" type="hidden" value="">
 							  <fieldset class="form-group">
 							    <label for="list">Add to List:</label>
 							    <select class="form-control" name="list" id="list">
@@ -66,12 +67,12 @@
 							    	<option value="white">White List</option>
 							    	<option value="black">Black List</option>
 							    </select>
-							  </fieldset>							
+							  </fieldset>
 							  <fieldset class="form-group">
 							    <label for="domain">Domain:</label>
 							    <input type="text" class="form-control domain" id="domain" name="domain" placeholder="Example input">
 							  </fieldset>
-			                	<fieldset class="form-group">								        		
+			                	<fieldset class="form-group">
 			                		<button type="submit" name="submitbutton" id="submitbutton" class="btn btn-danger pull-right">
 			                			Add Entry
 			                		</button>
