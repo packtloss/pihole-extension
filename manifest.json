@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Pi-Hole List Editor",
 	"description": "Add/Remove/View whitelist and blacklist entries on your PiHole. Requires Extension API Script and some configuration.",
-	"version": "1.0",
+	"version": "1.1",
 	"options_ui": {
     	"page": "options.html",
     	"chrome_style": false
@@ -12,15 +12,15 @@
 		"tabs",
 		"storage"
 	],
-	"icons": { 
+	"icons": {
 		"16": "img/pihole16.png",
 		"48": "img/pihole48.png",
-		"128": "img/pihole128.png" 
+		"128": "img/pihole128.png"
 	},
 	"browser_action": {
-		"default_icon": {                    
-			"19": "img/pihole48.png",          
-			"38": "img/pihole48.png"          
+		"default_icon": {
+			"19": "img/pihole48.png",
+			"38": "img/pihole48.png"
 		},
 		"default_popup": "popup.html"
 	},

@@ -4,9 +4,9 @@
 	    <meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
+
 		<title>Pi-Hole Extension</title>
-				
+
 		<!-- Cascading Style Sheets -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/custom.css" rel="stylesheet" media="screen">
@@ -16,7 +16,7 @@
 	            height: 400px;
 	            /* overflow: hidden; */
 	         }
-	    </style>		
+	    </style>
 	</head>
 	<body>
 
@@ -34,17 +34,17 @@
 						<ul class="dropdown-menu">
 							<li class="dropdown-header">Settings</li>
 							<li><a href="settings.html">Extension Settings</a></li>
-							<li><a href="#">Your Pi-Hole Admin</a></li>
+							<li><a id="pihole_local_admin_href" href="#" target="_blank" >Your Pi-Hole Admin</a></li>
 							<li><a href="#">About this Extension...</a></li>
 							<li class="dropdown-header">Other Links</li>
-							<li><a href="#">Pi-Hole Website</a></li>
-							<li><a href="#">Pi-Hole Help</a></li>
+							<li><a href="https://pi-hole.net/">Pi-Hole Website</a></li>
+							<li><a href="https://pi-hole.net/help">Pi-Hole Help</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col-12" style="height:10px;"></div>
@@ -62,7 +62,11 @@
 							  <fieldset class="form-group">
 							    <label for="formGroupExampleInput">Pi-Hole API Key:</label>
 							    <input type="text" id="piholekey" class="form-control">
-							  </fieldset>						  
+							  </fieldset>
+							  <fieldset class="form-group">
+							      <label for="formGroupExampleInput">Pi-Hole local admin:</label>
+							      <input type="text" id="pihole_local_admin" class="form-control">
+							  </fieldset>
 							  <fieldset class="form-group">
 							  	<button id="clear" class="btn btn-sm btn-danger">Reset</button>
 							    <button id="save" class="btn btn-sm btn-primary pull-right">Save</button>
