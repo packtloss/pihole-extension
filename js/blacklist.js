@@ -49,7 +49,7 @@ $(document).ready(function() {
   // Got blacklisted domains
 
   // process the form when button is pressed.
-  $('form').submit(function(event) {
+  $('#form_edit_blacklist').submit(function(event) {
 
     var piholekey = $('input[name=piholekey]').val();
     var piholeurl = $('input[name=piholeurl]').val();

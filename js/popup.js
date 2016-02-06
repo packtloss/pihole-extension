@@ -20,7 +20,7 @@ $(document).ready(function() {
     // populate the nav dropdown items
 
   // process the form when button is pressed.
-  $('form').submit(function(event) {
+  $('#form_add_to_list').submit(function(event) {
 
     // Disable Input while waiting, pi isnt speedy.
     // Purge and lock the select box, because im an asshole.
