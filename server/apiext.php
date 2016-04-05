@@ -3,7 +3,7 @@
 Add this to /etc/sudoers (at your own risk - but needed for this):
 
 User_Alias WWW_USER = www-data
-Cmnd_Alias WWW_COMMANDS = /usr/local/bin/gravity.sh, /usr/local/bin/whitelist.sh, /usr/local/bin/blacklist.sh
+Cmnd_Alias WWW_COMMANDS = /usr/local/bin/pihole
 WWW_USER ALL = (ALL) NOPASSWD: WWW_COMMANDS
 */
 
@@ -13,13 +13,15 @@ $apiKey = "123456789";
 
 /*
 * Paths to stuff. Change if non-standard.
+* Since 2.6 pihole uses a single script file
 */
+$piholeScript = "/usr/local/bin/pihole";
 //White
 $whiteListFile = "/etc/pihole/whitelist.txt";
-$whiteListScript = "/usr/local/bin/whitelist.sh";
+$whiteListCommand = $piholeScript . " -w";
 //Black
 $blackListFile = "/etc/pihole/blacklist.txt";
-$blackListScript = "/usr/local/bin/blacklist.sh";
+$blackListCommand = $piholeScript . " -b";
 
 $errors = array();
 $data   = array();
@@ -36,7 +38,7 @@ if($userKey != $apiKey) {
 
 // Verify There's something to do...
 $userAction = strtolower((isset($_REQUEST['action']) && !empty($_REQUEST['action'])) ? $_REQUEST['action'] : 'none');
-if($userAction == 'none') {       
+if($userAction == 'none') {
     $data['status'] = false;
     $data['errors']['action'] = "API ERR: No Action Requested.";
     print json_encode($data);
@@ -90,14 +92,14 @@ if($userAction == "add" || $userAction == "delete") {
 
 // Helpers
 function handleList($domain = 'null', $action = 'add', $list = 'white') {
-    global $whiteListFile, $blackListFile, $whiteListScript, $blackListScript;
+    global $whiteListFile, $blackListFile, $whiteListCommand, $blackListCommand;
     if($domain == 'null') {
         return false;
     }
     if($list != 'black' && $list != 'white') {
         return false;
     } else {
-        $command = 'sudo ' . ($list == 'white' ? $whiteListScript : $blackListScript) . ($action == 'delete' ? ' -d ' : ' ') . $domain;
+        $command = 'sudo ' . ($list == 'white' ? $whiteListCommand : $blackListCommand) . ($action == 'delete' ? ' -d ' : ' ') . $domain;
     }
     exec($command,$result);
     return $result;
@@ -121,3 +123,4 @@ function validateDomain($domain) {
     }
     return true;
 }
+
