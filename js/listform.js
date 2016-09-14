@@ -4,10 +4,13 @@ function restore_options() {
   // Use defaults if empty
   chrome.storage.sync.get({
     piholekey: 'Unset',
-    piholeurl: 'http://raspberrypi.local/admin/apiext.php'
+    piholeurl: 'http://raspberrypi.local/admin/apiext.php',
+    pihole_local_admin: 'http://raspberrypi.local/admin/index.php'
   }, function(items) {
     document.getElementById('piholeurl').value = items.piholeurl;
     document.getElementById('piholekey').value = items.piholekey;
+    document.getElementById('pihole_local_admin').value = items.pihole_local_admin;
+
   });
 }
 
@@ -16,7 +19,7 @@ $(document).ready(function() {
   // process the form
   $('form').submit(function(event) {
     // remove old error class and text
-    $('.form-group').removeClass('has-error'); 
+    $('.form-group').removeClass('has-error');
     $('.help-block').remove();
     $('.alert').remove();
     var formUrl = $('input[name=piholeurl]').val();

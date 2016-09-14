@@ -1,3 +1,11 @@
+# Depreciated (and I expect broken)
+
+## This was useful in the days when you had to open a terminal every time you wanted to add a domain to your whitelist.
+
+## Now the official install (https://pi-hole.net/) does a much better (and less hacky) job at managing your lists. So use that instead.
+
+----
+
 Quick and Dirty chrome Extenstion and API for PiHole.
 
 Code is messy and proof of concept. I'll update if there is interest.
@@ -8,7 +16,7 @@ Code is messy and proof of concept. I'll update if there is interest.
 
 ```
 User_Alias WWW_USER = www-data
-Cmnd_Alias WWW_COMMANDS = /usr/local/bin/gravity.sh, /usr/local/bin/whitelist.sh, /usr/local/bin/blacklist.sh
+Cmnd_Alias WWW_COMMANDS = /usr/local/bin/pihole
 WWW_USER ALL = (ALL) NOPASSWD: WWW_COMMANDS
 ```
 This allows webserver user to execute the white/black/gravity scripts without being root. I couldn't think of an 'easier' way.
