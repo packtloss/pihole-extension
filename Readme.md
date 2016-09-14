@@ -1,8 +1,10 @@
 # Depreciated (and I expect broken)
 
-This was useful in the days when you had to open a terminal every time you wanted to add a domain to your whitelist.
+## This was useful in the days when you had to open a terminal every time you wanted to add a domain to your whitelist.
 
-Now the official install (https://pi-hole.net/) does a much better (and less hacky) job at managing your lists. So use that instead.
+## Now the official install (https://pi-hole.net/) does a much better (and less hacky) job at managing your lists. So use that instead.
+
+----
 
 Quick and Dirty chrome Extenstion and API for PiHole.
 
